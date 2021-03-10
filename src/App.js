@@ -14,16 +14,9 @@ function App() {
   const timeNow = new Date();
   const [hour, setHour] = useState(timeNow.getHours());
 
-  console.log("current time: ", hour);
-
-  const increaseTime = () => {
-    setHour((hour + 1) % 24);
-  }
-
   return (
     <Router>
       <div className = {`g${hour.toString()} App`}>
-          <button onClick = {increaseTime}>Increase hours</button>
             <TimeSlider startTime = {hour} setTime = {setHour} />
           
               <Link to="/">Home</Link>
